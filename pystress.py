@@ -37,6 +37,7 @@ def sigint_handler(signum, frame):
 
 signal.signal(signal.SIGINT, sigint_handler)
 
+
 def get_args():
     exec_time = DEFAULT_TIME
     proc_num = DEFAULT_CPU
@@ -50,6 +51,7 @@ def get_args():
 
     return exec_time, proc_num
 
+
 def _main():
     try:
         exec_time, proc_num = get_args()
@@ -58,6 +60,7 @@ def _main():
         sys.stderr.write(msg)
         sys.exit(1)
     procs = []
+
     for i in range(proc_num):
         p = Process(target=loop)
         p.start()
