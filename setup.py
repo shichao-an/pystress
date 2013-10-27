@@ -10,7 +10,7 @@ def get_version():
 
 def get_long_description():
     desc = None
-    with open(README.rst) as f:
+    with open('README.rst') as f:
         desc = f.read()
     return desc
 
