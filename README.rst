@@ -3,13 +3,14 @@ pystress - Simple CPU stresser in Python
 
 pystress is a tool to stress your CPU in a simple manner.
 
-.. _PEP 8: http://www.python.org/dev/peps/pep-0008/
-
 
 Installation
 ------------
+You can install with pip::
 
-You can download a source distribution and install pystress with these commands::
+  $ pip install pystress
+
+Or, you can download a source distribution and install with these commands::
 
   $ python setup.py install
 

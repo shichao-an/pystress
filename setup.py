@@ -34,4 +34,10 @@ setup(
             'pystress = pystress:_main',
         ],
     },
+    classifiers=[
+        "Environment :: Console",
+        "License :: OSI Approved :: BSD License",
+        "Programming Language :: Python",
+        "Programming Language :: Python :: 2",
+    ],
 )
