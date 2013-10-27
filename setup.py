@@ -8,10 +8,18 @@ def get_version():
                 return eval(line.split('=')[-1])
 
 
+def get_long_description():
+    desc = None
+    with open(README.rst) as f:
+        desc = f.read()
+    return desc
+
+
 setup(
     name='pystress',
     version=get_version(),
     description="Simple CPU stresser in Python",
+    long_description=get_long_description(),
     keywords='pystress',
     author='Shichao An',
     author_email='shichao.an@nyu.edu',
