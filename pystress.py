@@ -1,4 +1,4 @@
-__version__ = '0.1'
+__version__ = '0.1.1'
 
 from multiprocessing import Process, active_children, cpu_count
 import os
@@ -19,7 +19,6 @@ def loop():
     print "Process ID:", os.getpid()
     while True:
         fib(FIB_N)
-    return c
 
 
 def fib(n):
