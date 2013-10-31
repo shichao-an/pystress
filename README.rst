@@ -3,6 +3,9 @@ pystress - Simple CPU stresser in Python
 
 pystress is a tool to stress your CPU in a simple manner.
 
+.. image:: https://travis-ci.org/shichao-an/pystress.png?branch=master
+   :target: https://travis-ci.org/shichao-an/pystress
+
 
 Installation
 ------------

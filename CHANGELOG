@@ -1,0 +1,13 @@
+==========
+Change Log
+==========
+
+v0.2
+====
+
+- Use pipe to redirect output from child processes.
+
+v0.1
+====
+
+- Initial release.
