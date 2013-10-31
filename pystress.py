@@ -1,6 +1,6 @@
 __version__ = '0.1.1'
 
-from multiprocessing import Process, active_children, cpu_count
+from multiprocessing import Process, active_children, cpu_count, Pipe
 import os
 import signal
 import sys
@@ -15,8 +15,10 @@ except NotImplementedError:
     DEFAULT_CPU = 1
 
 
-def loop():
-    print "Process ID:", os.getpid()
+def loop(conn):
+    proc_info = "Process ID: %d" % os.getpid()
+    conn.send(proc_info)
+    conn.close()
     while True:
         fib(FIB_N)
 
@@ -60,11 +62,19 @@ def _main():
         sys.stderr.write(msg)
         sys.exit(1)
     procs = []
-
+    conns = []
     for i in range(proc_num):
-        p = Process(target=loop)
+        parent_conn, child_conn = Pipe()
+        p = Process(target=loop, args=(child_conn,))
         p.start()
         procs.append(p)
+        conns.append(parent_conn)
+
+    for conn in conns:
+        try:
+            print conn.recv()
+        except EOFError:
+            continue
 
     time.sleep(exec_time)
     
