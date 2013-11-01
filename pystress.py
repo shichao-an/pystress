@@ -77,7 +77,7 @@ def _main():
             continue
 
     time.sleep(exec_time)
-    
+
     for p in procs:
         p.terminate()
 
