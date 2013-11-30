@@ -1,4 +1,4 @@
-__version__ = '0.2.0'
+__version__ = '0.2.1'
 
 from multiprocessing import Process, active_children, cpu_count, Pipe
 import os
@@ -16,7 +16,7 @@ except NotImplementedError:
 
 
 def loop(conn):
-    proc_info = "Process ID: %d" % os.getpid()
+    proc_info = os.getpid()
     conn.send(proc_info)
     conn.close()
     while True:
