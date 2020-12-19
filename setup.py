@@ -9,10 +9,8 @@ def get_version():
 
 
 def get_long_description():
-    desc = None
     with open('README.rst') as f:
-        desc = f.read()
-    return desc
+        return f.read()
 
 
 setup(
@@ -39,5 +37,6 @@ setup(
         "License :: OSI Approved :: BSD License",
         "Programming Language :: Python",
         "Programming Language :: Python :: 2",
+        "Programming Language :: Python :: 3",
     ],
 )
